@@ -1,0 +1,461 @@
+:root {
+    --primary: #1890ff;
+    --text-main: rgba(0, 0, 0, 0.85);
+    --text-sec: rgba(0, 0, 0, 0.45);
+    --bg-light: #fafafa;
+    --border: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    height: 64px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    padding: 0 15px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+        url('https://4kwallpapers.com/images/walls/thumbs_3t/25709.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Buttons Antd */
+.ant-btn {
+    padding: 10px 25px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.ant-btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border: 1px solid var(--primary);
+}
+
+.ant-btn-default {
+    border: 1px solid #fff;
+    color: #fff;
+    margin-left: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.ant-btn-default:hover {
+    background: #fff;
+    color: var(--primary);
+}
+
+/* About Section */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-flex {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.about-info {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.role {
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.info-details {
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-sec);
+}
+
+.info-details p {
+    margin-bottom: 10px;
+}
+
+.info-details i {
+    width: 25px;
+    color: var(--primary);
+}
+
+.about-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-block h4 {
+    margin-bottom: 15px;
+    color: var(--text-main);
+    font-size: 1.2rem;
+}
+
+/* Timeline */
+.timeline {
+    border-left: 2px solid var(--border);
+    padding-left: 20px;
+    position: relative;
+}
+
+.timeline-item {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    left: -26px;
+    top: 8px;
+}
+
+.time {
+    font-size: 0.8rem;
+    color: var(--text-sec);
+}
+
+/* Project Grid */
+.bg-light {
+    background: var(--bg-light);
+}
+
+/* Tối ưu hóa Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.project-card {
+    padding: 0 !important;
+    /* Loại bỏ padding mặc định của card cũ */
+    overflow: hidden;
+    border: none !important;
+    background: #fff;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Phần hình ảnh dự án */
+.project-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Hiệu ứng lớp phủ khi hover vào ảnh */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(24, 144, 255, 0.8);
+    /* Màu primary của Antd */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.view-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid #fff;
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.view-link:hover {
+    background: #fff;
+    color: var(--primary);
+}
+
+/* Thông tin chi tiết trong Card */
+.project-info {
+    padding: 24px;
+}
+
+.project-info h3 {
+    margin: 12px 0;
+    font-size: 1.3rem;
+    color: var(--text-main);
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    color: var(--text-sec);
+    line-height: 1.6;
+    height: 75px;
+    /* Giữ các card đều nhau */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Thẻ Tags chuẩn Antd */
+.tag-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.tag {
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.tag.software {
+    background: #e6f7ff;
+    color: #1890ff;
+    border: 1px solid #91d5ff;
+}
+
+.tag.hardware {
+    background: #f6ffed;
+    color: #52c41a;
+    border: 1px solid #b7eb8f;
+}
+
+.tag.database {
+    background: #fff7e6;
+    color: #fa8c16;
+    border: 1px solid #ffd591;
+}
+
+.tag.language {
+    background: #f9f0ff;
+    color: #722ed1;
+    border: 1px solid #d3adf7;
+}
+
+/* Footer của Card */
+.project-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.project-footer span:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #001529;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+/* Animation */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
